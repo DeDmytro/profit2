@@ -2,11 +2,23 @@
 
 require __DIR__ . '/autoload.php';
 
-$db = new \App\Db();
+$users = \App\Models\User::findAll();
 
-$data = $db->query('SELECT * FROM users','App\Models\User');
 echo '<pre>';
-var_dump($data);
+var_dump($users);
+
+
+
+
+
+
+
+
+//$db = new \App\Db();
+
+//$data = $db->query('SELECT * FROM users','App\Models\User');
+//echo '<pre>';
+//var_dump($data);
 
 
 

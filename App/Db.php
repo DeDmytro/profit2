@@ -11,7 +11,7 @@ class Db
         $this->dbh = new \PDO('mysql:host=127.0.0.1; dbname=profit2','root','');
 
         if($this->dbh){
-            echo 'DB: success!';
+            echo 'DB: success!<br>';
         }
     }
 

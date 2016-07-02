@@ -2,7 +2,9 @@
 
 namespace App;
 
-class Model
+abstract class Model
+//не позволяет создавать обьекты,
+//могут только наследники
 {
     const TABLE = '';
 
@@ -15,3 +17,4 @@ class Model
         );
     }
 }
+

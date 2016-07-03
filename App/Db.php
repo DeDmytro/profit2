@@ -2,11 +2,14 @@
 
 namespace App;
 
-class Db
+class Db extends Singleton
 {
+//    //Использовать трейт /
+//    use Singleton;
+
     protected $dbh;//data base handler
 
-    public function __construct()
+    protected function __construct()
     {
         $this->dbh = new \PDO('mysql:host=127.0.0.1; dbname=profit2','root','');
 
@@ -15,10 +18,10 @@ class Db
         }
     }
 
-    public function execute($sql){
+    public function execute($sql, $params = []){
 
         $sth = $this->dbh->prepare($sql);
-        return $sth->execute();//true or false
+        return $sth->execute($params);//true or false
     }
 
     public function query($sql, $class){

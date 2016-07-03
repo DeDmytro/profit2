@@ -18,7 +18,23 @@
     <![endif]-->
 </head>
 <body>
+
 <h1>Hello, world!</h1>
+
+<?php foreach ($users as $user) { ?>
+<div class="panel panel-default">
+    <div class="panel-heading"><?php echo $user->name; ?>
+        <?php if (!empty($user->name)) { ?>
+            <?php echo $user->name; ?>
+        <?php }else { ?>
+        -= Без имени =-
+       <?php } ?>
+
+    </div>
+    <div class="panel-body"><?php echo $user->email; ?></div>
+</div>
+<?php } ?>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

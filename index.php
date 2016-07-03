@@ -2,7 +2,7 @@
 use App\Models\User;
 require __DIR__ . '/autoload.php';
 
-
+$users = \App\Models\User::findAll();
 include __DIR__ . '\App\templates\index.php';
 
 
@@ -58,9 +58,9 @@ include __DIR__ . '\App\templates\index.php';
 $user = new User();
 $user->name = 'Julia';
 $user->email = 'matovykh@mail.ru';
-$user->insert();
+//$user->insert();
 //Реализация ActiveRecord(Удаления обьекта из базы данных)
-$user->delete();
+//$user->delete();
 
 
 //$db = new \App\Db();

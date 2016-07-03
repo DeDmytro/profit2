@@ -18,6 +18,8 @@ $user = new User();
 $user->name = 'Julia';
 $user->email = 'matovykh@mail.ru';
 $user->insert();
+//Реализация ActiveRecord(Удаления обьекта из базы данных)
+$user->delete();
 
 
 //$db = new \App\Db();

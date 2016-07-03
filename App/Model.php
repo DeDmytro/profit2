@@ -40,6 +40,23 @@ abstract class Model
         VALUES (' . implode(',',array_keys($values)) . ')';
         $db = Db::instance();
         $db->execute($sql,$values);
+//        echo $sql.'<br>';
+    }
+    public function delete(){
+        $columns= [];
+        $values = [];
+        foreach ($this as $key => $value){
+            if('id' == $key){
+                continue;
+            }
+            $columns[] = $key;
+            $values[':'.$key] = $value;
+        }
+        $sql = 'DELETE FROM ' . static::TABLE . ' WHERE '
+            . $columns[0] .' = ' .'\''. $values[':'.$columns[0]].'\'';
+//        echo $sql.'<br>';
+        $db = Db::instance();
+        $db->execute($sql,$values);
     }
 }
 

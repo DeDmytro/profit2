@@ -9,7 +9,7 @@
 namespace App\Models;
 
 
-class HasEmail
+interface HasEmail
 {
-
+    public function getEmail();
 }

@@ -3,14 +3,9 @@
 require __DIR__ . '/autoload.php';
 
 
-
-
-
-
 //Установил  метод getEmail() @derpecated
 //$user = new \App\Models\User();
 //$user->getEmail();
-
 
 
 // создание обьекта представления
@@ -18,16 +13,16 @@ $view = new \App\View();
 //загрузка в него данных
 $view->title = 'Мой крутой сайт';
 $view->users = \App\Models\User::findAll();
-//отобржаение этих данных
-echo $view->render(__DIR__ . '\App\templates\index.php');
+$view->display(__DIR__ . '\App\templates\index.php');
+echo count($view);
 
-
-
+//После рендера файл вывода обычная строка
+//$cont = $view->render(__DIR__ . '\App\templates\index.php');
+//echo str_replace('@',' нет собачки!!! ' ,$cont );
 
 //Вывод темплейта
 //$users = \App\Models\User::findAll();
 //include __DIR__ . '\App\templates\index.php';
-
 
 //Singleton
 //$single = App\Singleton::instance();
@@ -49,7 +44,6 @@ use App\Models\User;
 //$data = $db->query('SELECT * FROM users','App\Models\User');
 //echo '<pre>';
 //var_dump($data);
-
 
 
 //$result = $db->execute('CREATE TABLE foo (id SERIAL)');

@@ -3,6 +3,15 @@
 require __DIR__ . '/autoload.php';
 
 
+
+$user = new \App\Models\User();
+$user->
+
+
+
+
+
+
 // создание обьекта представления
 $view = new \App\View();
 //загрузка в него данных

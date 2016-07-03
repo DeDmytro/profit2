@@ -5,6 +5,12 @@ namespace App\Models;
 use App\Db;
 use App\Model;
 
+/**
+ * Class User
+ * @package App\Models
+ *
+ * @property int $age
+ */
 class User extends Model
     implements HasEmail
 {

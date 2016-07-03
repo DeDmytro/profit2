@@ -4,11 +4,12 @@ require __DIR__ . '/autoload.php';
 
 
 
-$user = new \App\Models\User();
-$user->
 
 
 
+//Установил  метод getEmail() @derpecated
+//$user = new \App\Models\User();
+//$user->getEmail();
 
 
 
@@ -18,9 +19,7 @@ $view = new \App\View();
 $view->title = 'Мой крутой сайт';
 $view->users = \App\Models\User::findAll();
 //отобржаение этих данных
-$view->display(__DIR__ . '\App\templates\index.php');
-
-
+echo $view->render(__DIR__ . '\App\templates\index.php');
 
 
 

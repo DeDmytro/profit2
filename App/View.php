@@ -22,7 +22,17 @@ class View {
 
         return $this->data[$name];
     }
+    public function render($template){
+        ob_start();
+        include $template;
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
 
+    /**
+     * @param $template string Путь к шаблону
+     */
     public function display($template){
         include $template;
     }

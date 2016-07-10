@@ -24,10 +24,10 @@ class Db extends Singleton
         return $sth->execute($params);//true or false
     }
 
-    public function query($sql, $class){
+    public function query($sql,$params, $class){
 
         $sth = $this->dbh->prepare($sql);
-        $result = $sth->execute();//true or false
+        $result = $sth->execute($params);//true or false
 
         if (false !== $result){
             return $sth->fetchAll(\PDO::FETCH_CLASS, $class);

@@ -13,10 +13,19 @@ abstract class Model
 
         $db = Db::instance();
         return $db->query(
-            'SELECT * FROM ' . static::TABLE,
+            'SELECT * FROM ' . static::TABLE,[],
             static::class//полное имя этого класса
         );
     }
+    public static function findById($id){
+
+        $db = Db::instance();
+        return $db->query(
+            'SELECT * FROM ' . static::TABLE .' WHERE id = :id',[':id'=>$id],
+            static::class//полное имя этого класса
+        );
+    }
+
     public function isNew(){
         return empty($this->id);
     }

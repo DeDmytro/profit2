@@ -23,7 +23,7 @@ abstract class Model
         return $db->query(
             'SELECT * FROM ' . static::TABLE .' WHERE id = :id',[':id'=>$id],
             static::class//полное имя этого класса
-        );
+        )[0];
     }
 
     public function isNew(){

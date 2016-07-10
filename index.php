@@ -12,9 +12,15 @@ require __DIR__ . '/autoload.php';
 $view = new \App\View();
 //загрузка в него данных
 $view->title = 'Мой крутой сайт';
+$view->news = \App\Models\News::findAll();
+
 $view->users = \App\Models\User::findAll();
 $view->display(__DIR__ . '\App\templates\index.php');
-echo count($view);
+
+
+
+//$view->display(__DIR__ . '\App\templates\index.php');
+//echo count($view);
 
 //После рендера файл вывода обычная строка
 //$cont = $view->render(__DIR__ . '\App\templates\index.php');

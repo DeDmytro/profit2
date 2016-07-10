@@ -1,4 +1,7 @@
 <?php
+//Полчуить адрес
+$url = $_SERVER['REQUEST_URI'];
+
 
 require __DIR__ . '/autoload.php';
 

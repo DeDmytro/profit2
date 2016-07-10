@@ -7,16 +7,26 @@ require __DIR__ . '/autoload.php';
 //$user = new \App\Models\User();
 //$user->getEmail();
 
+$controller = new \App\Controllers\News();
+$controller->action('Index');
+
+
+
+
+
+
+
+
+
 
 // создание обьекта представления
-$view = new \App\View();
+//$view = new \App\View();
 //загрузка в него данных
-$view->title = 'Мой крутой сайт';
-$view->news = \App\Models\News::findAll();
-
-$view->users = \App\Models\User::findAll();
-$view->display(__DIR__ . '\App\templates\index.php');
-
+//$view->title = 'Мой крутой сайт';
+//$view->news = \App\Models\News::findAll();
+//
+//$view->users = \App\Models\User::findAll();
+//$view->display(__DIR__ . '\App\templates\index.php');
 
 
 //$view->display(__DIR__ . '\App\templates\index.php');
@@ -33,8 +43,8 @@ $view->display(__DIR__ . '\App\templates\index.php');
 //Singleton
 //$single = App\Singleton::instance();
 //var_dump($single);
-
-use App\Models\User;
+//
+//use App\Models\User;
 
 //Реализация ActiveRecord(Запись обьекта в базу данных)
 //$user = new User();

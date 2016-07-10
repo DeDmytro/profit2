@@ -18,7 +18,6 @@ use App\Model;
  * @property \App\Models\Author $author
  */
 
-
 class News extends Model{
     const TABLE = 'news';
 

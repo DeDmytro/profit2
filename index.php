@@ -17,8 +17,10 @@ $action = $_GET['action'] ?: 'Index';
 
 try{
     $controller->action($action);
-}catch (Exception $e){
-    echo '<b>Exception appeared</b>: ' . $e->getMessage();
+}catch (\App\Exceptions\Core $e){
+    echo '<b>Application Exception appeared</b>: ' . $e->getMessage();
+}catch (\App\Exceptions\Db $e){
+    echo '<b>DB Exception appeared</b>: ' . $e->getMessage();
 }
 
 

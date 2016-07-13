@@ -9,6 +9,8 @@
 namespace App\Controllers;
 
 
+use App\Exceptions\Core;
+use App\Exceptions\Db;
 use App\View;
 
 class News {
@@ -23,8 +25,9 @@ class News {
         return $this->$methodName();
     }
     protected function beforeAction(){
-        $e = new \Exception('Message about exception');
-        //throw $e;
+        $e = new Db('Message about exception');
+//        $e = new Core('Message about exception');
+        throw $e;
     }
     public function actionIndex(){
 

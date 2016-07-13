@@ -23,7 +23,8 @@ class News {
         return $this->$methodName();
     }
     protected function beforeAction(){
-//        echo 'Counter';
+        $e = new \Exception('Message about exception');
+        //throw $e;
     }
     public function actionIndex(){
 

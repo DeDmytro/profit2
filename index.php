@@ -14,7 +14,13 @@ $controller = new \App\Controllers\News();
 
 $action = $_GET['action'] ?: 'Index';
 
-$controller->action($action);
+
+try{
+    $controller->action($action);
+}catch (Exception $e){
+    echo '<b>Exception appeared</b>: ' . $e->getMessage();
+}
+
 
 
 

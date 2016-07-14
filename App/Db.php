@@ -11,7 +11,12 @@ class Db extends Singleton
 
     protected function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=127.0.0.1; dbname=profit2','root','');
+        try{
+            $this->dbh = new \PDO('mysql:host=127.0.0.1; dbname=profit2','root','');
+
+        }catch(\PDOException $e){
+           throw new \App\Exceptions\Db();
+        }
 
         if($this->dbh){
             echo 'DB: success!<br>';

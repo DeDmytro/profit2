@@ -25,9 +25,9 @@ class News {
         return $this->$methodName();
     }
     protected function beforeAction(){
-        $e = new Db('Message about exception');
-//        $e = new Core('Message about exception');
-        throw $e;
+//        $e = new Db('Message about exception');
+////        $e = new Core('Message about exception');
+//        throw $e;
     }
     public function actionIndex(){
 
